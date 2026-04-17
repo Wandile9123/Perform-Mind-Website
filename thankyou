@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Received — Perform Mind</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:     #080C10;
+    --bg-mid: #0D1318;
+    --steel:  #1A2530;
+    --fog:    #8FA3B0;
+    --fog-soft:#6B8494;
+    --ember:  #C96A4A;
+    --white:  #D8E4EA;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--fog);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    border-bottom: 1px solid rgba(143,163,176,0.06);
+  }
+  .logo-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500; font-size: 15px;
+    letter-spacing: 0.1em; color: var(--white);
+    text-transform: lowercase; text-decoration: none;
+  }
+  .logo-text span { color: var(--ember); }
+
+  /* ── MAIN ── */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  main::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(201,106,74,0.05) 0%, transparent 70%);
+  }
+
+  /* Animated checkmark */
+  .check-wrap {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    border: 2px solid var(--ember);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 32px;
+    position: relative; z-index: 1;
+    animation: popIn 0.5s ease forwards;
+  }
+
+  .check-wrap svg {
+    width: 32px; height: 32px;
+    stroke: var(--ember);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: drawCheck 0.5s ease forwards 0.4s;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 16px;
+    position: relative; z-index: 1;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.6s;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 80px);
+    color: var(--white);
+    letter-spacing: 0.03em;
+    line-height: 0.95;
+    margin-bottom: 24px;
+    position: relative; z-index: 1;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.7s;
+  }
+
+  h1 .ember { color: var(--ember); }
+
+  .body-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--fog-soft);
+    max-width: 420px;
+    border-left: 3px solid var(--ember);
+    padding-left: 18px;
+    text-align: left;
+    margin-bottom: 44px;
+    position: relative; z-index: 1;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.85s;
+  }
+
+  .btn-primary {
+    background: var(--ember);
+    color: var(--white);
+    padding: 13px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+    position: relative; z-index: 1;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1s;
+  }
+  .btn-primary:hover { background: #D97A5A; transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 24px 48px;
+    border-top: 1px solid rgba(143,163,176,0.06);
+    display: flex;
+    justify-content: center;
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--fog-soft);
+    opacity: 0.25;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+  }
+  @keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media(max-width:600px) {
+    nav { padding: 16px 20px; }
+    footer { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://performmind.com" class="logo-text">perform <span>mind</span></a>
+</nav>
+
+<main>
+  <div class="check-wrap">
+    <svg viewBox="0 0 24 24">
+      <polyline points="4 12 9 17 20 7"/>
+    </svg>
+  </div>
+
+  <p class="eyebrow">Form Received</p>
+
+  <h1>You're in.<br>I'll be in <span class="ember">touch.</span></h1>
+
+  <p class="body-text">
+    Thank you for reaching out. I'll review your message and get back to you within 48 hours to arrange a discovery call.
+  </p>
+
+  <a href="https://performmind.com" class="btn-primary">Back to Home</a>
+</main>
+
+<footer>
+  <span class="footer-copy">© 2026 Perform Mind · Béziers, France</span>
+</footer>
+
+</body>
+</html>
