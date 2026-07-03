@@ -39,8 +39,7 @@
   /* ── NAV ── */
   nav {
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(8,12,16,0.94);
-    backdrop-filter:blur(16px);
+    background:#080C10;
     border-bottom:1px solid rgba(143,163,176,0.06);
   }
   .nav-inner {
@@ -247,11 +246,11 @@
   }
   .cred-item:hover { border-color:rgba(201,106,74,0.15); }
   .cred-label {
-    font-size:10px; letter-spacing:0.22em; text-transform:uppercase;
-    color:var(--ember); margin-bottom:7px;
+    font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+    color:#DD8664; margin-bottom:8px; font-weight:400;
   }
   .cred-value {
-    font-size:14px; color:var(--white); font-weight:400; line-height:1.45;
+    font-size:15px; color:#E8F1F5; font-weight:400; line-height:1.5;
   }
 
   /* ── PEDIGREE — Performed At ── */
@@ -609,6 +608,9 @@
     .about-photo { aspect-ratio:4/5; }
     .oc-grid { grid-template-columns:1fr; }
     .creds-grid { grid-template-columns:1fr; }
+    .cred-label { font-size:12px; }
+    .cred-value { font-size:16px; }
+    .cred-item { padding:20px 22px; }
     .diff-grid { grid-template-columns:1fr 1fr; gap:28px 20px; }
     .diff-band { padding:40px 24px 36px; }
     .ped-grid { grid-template-columns:1fr 1fr; gap:28px 16px; }
