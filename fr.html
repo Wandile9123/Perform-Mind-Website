@@ -5,24 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wandile Mjekevu — Coach en Performance Mentale | Perform Mind</title>
 <meta name="description" content="Coaching en performance mentale pour athlètes professionnels. Expérience vécue, pratique fondée sur les preuves. Ancien joueur de rugby professionnel : Lions, Sharks, Stade Toulousain, USA Perpignan.">
-  <meta property="og:type" content="website">
-<meta property="og:url" content="https://performmind.com/fr">
-<meta property="og:title" content="Wandile Mjekevu — Préparateur Mental | Perform Mind">
-<meta property="og:description" content="Préparation mentale en ligne pour athlètes professionnels, partout dans le monde. Ancien joueur de rugby professionnel : Lions, Sharks, Stade Toulousain, Perpignan.">
-<meta property="og:image" content="https://performmind.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:locale:alternate" content="en_US">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wandile Mjekevu — Préparateur Mental | Perform Mind">
-<meta name="twitter:description" content="Préparation mentale en ligne pour athlètes professionnels, partout dans le monde.">
-<meta name="twitter:image" content="https://performmind.com/og-image.jpg">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -131,7 +113,7 @@
   .hero-title .accent { color:var(--ember); display:block; }
   .hero-sub {
     margin-top:28px; font-size:17px; font-weight:300;
-    line-height:1.75; color:var(--fog-soft); max-width:520px;
+    line-height:1.75; color:#FFFFFF; max-width:520px;
     opacity:0; animation:fadeUp 0.8s ease forwards 0.7s;
   }
   .hero-actions {
@@ -201,7 +183,8 @@
     display:grid; grid-template-columns:1fr 1.35fr;
     gap:72px; align-items:start;
   }
-  .about-photo-wrap { position:relative; position:sticky; top:110px; }
+  .about-photo-wrap { position:relative; position:sticky; top:110px; z-index:1; }
+  .about-content { position:relative; z-index:3; }
   .about-photo {
     width:100%; aspect-ratio:2/3;
     object-fit:cover; object-position:center 20%;
@@ -246,7 +229,7 @@
     color:var(--ember); margin-top:6px;
   }
   .about-bio p {
-    font-size:16.5px; line-height:1.85; color:var(--fog-soft);
+    font-size:16.5px; line-height:1.85; color:#FFFFFF;
     margin-bottom:20px;
   }
   .about-bio strong { color:var(--white); font-weight:500; }
@@ -339,7 +322,7 @@
     margin-bottom:18px;
   }
   .ap-intro .support {
-    font-size:16px; line-height:1.8; color:var(--fog-soft);
+    font-size:16px; line-height:1.8; color:#FFFFFF;
     border-left:3px solid var(--ember); padding-left:20px;
   }
   .ap-framework {
@@ -353,7 +336,7 @@
   }
   .ap-fw-title .accent { color:var(--ember); font-style:italic; }
   .ap-fw-sub {
-    font-size:15px; color:var(--fog-soft); margin-bottom:40px;
+    font-size:15px; color:#FFFFFF; margin-bottom:40px;
     max-width:480px; line-height:1.7;
   }
   .oc-grid {
@@ -397,7 +380,7 @@
     font-weight:400;
   }
   .oc-desc {
-    font-size:14.5px; line-height:1.7; color:var(--fog-soft);
+    font-size:14.5px; line-height:1.7; color:#FFFFFF;
   }
 
   /* ── DIFFERENTIATORS ── */
@@ -442,7 +425,7 @@
     margin-bottom:8px; line-height:1.4;
   }
   .diff-desc {
-    font-size:13.5px; line-height:1.65; color:var(--fog-soft);
+    font-size:13.5px; line-height:1.65; color:#FFFFFF;
   }
 
   /* ── BANNER CTA ── */
@@ -456,7 +439,7 @@
     text-align:center;
   }
   .banner-q {
-    font-size:16px; color:var(--fog);
+    font-size:16px; color:#FFFFFF;
   }
   .banner-a {
     font-size:16px; color:var(--ember); font-weight:500;
@@ -487,7 +470,7 @@
     color:var(--ember); font-size:14px; margin-top:2px; flex-shrink:0;
   }
   .who-text { font-size:16px; line-height:1.6; color:var(--white); }
-  .who-text span { color:var(--fog-soft); font-style:italic; }
+  .who-text span { color:#FFFFFF; font-style:italic; opacity:0.85; }
 
   /* ── SERVICES ── */
   .services {
@@ -541,7 +524,7 @@
   }
   .contact-intro em { color:var(--ember); font-style:italic; }
   .contact-body {
-    font-size:16px; line-height:1.75; color:var(--fog-soft);
+    font-size:16px; line-height:1.75; color:#FFFFFF;
     border-left:3px solid var(--ember); padding-left:18px;
   }
   .form-grid {
@@ -614,6 +597,11 @@
     50%      { opacity:1;   transform:scaleY(0.65); }
   }
 
+  /* ── VISIBILITY OVERRIDE ── */
+  .about *, .pedigree *, .approach *, .who *, .contact *, footer * {
+    opacity:1 !important;
+  }
+
   /* ── MOBILE ── */
   @media(max-width:860px) {
     .nav-inner { padding:14px 20px; }
@@ -621,7 +609,8 @@
     .sec-pad { padding:70px 20px; }
     .scroll-indicator { display:none; }
     .about-grid { grid-template-columns:1fr; gap:44px; }
-    .about-photo-wrap { position:static; }
+    .about-photo-wrap { position:static !important; }
+    .about-photo-wrap::after { display:none !important; }
     .about-photo { aspect-ratio:4/5; }
     .oc-grid { grid-template-columns:1fr; }
     .creds-grid { grid-template-columns:1fr; }
